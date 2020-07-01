@@ -20,6 +20,8 @@ var numeroUt = [];
 var giocatore;
 var punteggio = 0;
 var nomeUt = prompt('Ciao utente, come ti chiami?');
+var dimensioneTot = sceltaDifficolta();
+var numeriTot = dimesioneTot - newArray;
 
 // Definire il ciclo per generare i 16 numeri randomici nell'Array
 while (newArray.length < 16) {
@@ -66,4 +68,22 @@ function getRandom(min,max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function sceltaDifficolta() {
+  var scelta = parseInt(prompt('Inserisci la difficoltà(0 - 1 - 2)'));
+  switch (scelta) {
+    case 1:
+      var dimTot = 100;
+      break;
+    case 2:
+      var dimTot = 80;
+      break;
+    case 3:
+      var dimTot = 50;
+      break;
+    default:
+      var dimTot = 100;
+      alert('La difficoltà verrà impostata su 0.')
+  }
 }
